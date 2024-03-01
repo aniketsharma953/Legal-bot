@@ -21,7 +21,7 @@ nav {
 nav a {
     color: rgba(74, 68, 68, 0.737);
     text-decoration: none;
-    margin-right: 20px; /* Adjusted for smaller screens */
+    margin-right: 20px;
 }
 
 nav a:hover {
@@ -74,7 +74,15 @@ nav a:hover {
         margin-right: 0;
     }
 }
-
+#head {
+    font-size: 60px;
+    color:#AD2FFB;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#head1 {
+    font-size: 60px;
+    font-family:Arial, Helvetica, sans-serif;
+}
 .bn30 {
     border: 5em;
     cursor: pointer;
@@ -83,6 +91,7 @@ nav a:hover {
     -webkit-transform: translate(0);
     transform: translate(0);
     background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    margin-bottom: 40px;
     padding: 0.7em 2em;
     border-radius: 65px;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
@@ -119,38 +128,114 @@ nav a:hover {
   .bn30:hover .text {
     background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
   }
-  #users {
-    display:grid;
-    grid-template-columns: 1fr 0fr 1fr;
+#users {
+    display:flex;
     margin-top: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 #Consumers {
     padding: 20px;
-    text-align: right;
     background-color: #EFEFEF;
     border: 1px solid #EFEFEF;
     margin-bottom: 20px;
 }
 #lawyer {
     padding: 20px;
-    text-align: left;
     background-color: #EFEFEF;
     border: 1px solid #EFEFEF;
     margin-bottom: 20px;
 }
 
 #line {
-    width: 2px;
-    height: 90%;
+    width: 1px;
+    height: 100px;
     background-color: #000000;
     margin-bottom: 20px;
 }
-@media only screen and (max-width:455px){
-    #users {
-        flex: 1;
-            margin: 10px; 
-            border: 1px solid #ddd; 
-            padding: 10px; 
+#cards {
+     display: flex;
+     justify-content: center;
+     gap: 2rem; 
+}
+#card {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin-top:30px;
+}
+#card1 {
+    height: 400px;
+    width:750px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    box-shadow: 10px 10px 5px grey;
+}
+#im {
+    height: 250px;
+    width: 650px;
+    border-radius:20px;  
+    margin-top: 30px;
+}
+#card2 {
+    height: 400px;
+    width:330px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    box-shadow: 10px 10px 5px grey;
+}
+#im1 {
+    height: 250px;
+    width: 280px;
+    border-radius:20px;  
+    margin-top: 30px;
+}
+#ch {
+    font-size: 29px;
+    margin-top: 15px;
+    padding-right: 450px;
+}
+#ch1 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+@media (max-width:580px){
+   #users {
+        display: flex;
+        flex-direction: column;
+    }
+    #line {
+        width: 100px;
+        height: 1px;
+        background-color: #000000;
+        margin-bottom: 20px;
+    }
+    #lawyer {
+        padding: 20px;
+        background-color: #EFEFEF;
+        border: 1px solid #EFEFEF;
+        margin-bottom: 5px;
+    }
+    #Consumers {
+        padding: 20px;
+        background-color: #EFEFEF;
+        border: 1px solid #EFEFEF;
+        margin-bottom: 5px;
+    }
+    #card1 {
+        height: 400px;
+        width:400px;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        margin-top: 20px;
+    }
+    #im {
+        height: 300px;
+        width: 200px;
+        border-radius:20px;  
+        margin-top: 30px;
     }
 }
