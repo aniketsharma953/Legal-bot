@@ -202,6 +202,27 @@ nav a:hover {
     font-size: 20px;
     margin-top: 15px;
 }
+#for {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+}
+#goal {
+    height: 400px;
+    width:250px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    margin-top: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+#goal:hover {
+    transform: scale(1.1);
+}
+#im2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 @media (max-width:580px){
    #users {
         display: flex;
