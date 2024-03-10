@@ -277,6 +277,53 @@ nav a:hover {
     background-color: #000000;
     margin-bottom: 20px;
 }
+.car {
+    width: 750px;
+    height: 400px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:180px;
+  }
+  .car-content {
+    font-size: 1.2em;
+    color: #333;
+  }
+
+footer {
+    background-color: #EFEFEF;
+    color: #000000;
+    padding: 20px 0;
+    margin-top: 250px;;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+  }  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 8px;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
 @media only screen and (max-width: 600px){
     #head {
         font-size: 40px;
