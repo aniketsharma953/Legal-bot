@@ -7,25 +7,22 @@
     <link rel="stylesheet" type="text/css" href="styles2.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Our Mission</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Cancellation/Refund Policy</a></li>
-            <li><a href="#">Using Law Bot Pro Effectively</a></li>
-        </ul>
-    </nav>
-    <div id="chat-container">
-        <div id="chat-messages"></div>
-        <div id="user-input">
-            <input type="text" id="input-text" placeholder="Type your message...">
-            <button id="send-button" onclick="sendMessage()">Send</button>
+    <div class="container">
+        <div class="left">
+            <div class="option">Home</div>
+            <div class="option">Copy</div>
+            <div class="option">Cloud</div>
+            <div class="option">Profile</div>
         </div>
-        <div id="foottext">
-            <h5>Law Bot Pro has been designed with help from Giri & Co., a 40 year old law firm based in New Delhi, India, specialising in all sorts of civil and criminal matters</h>
+        <div class="middle">
+            <div class="option">New Chat</div>
+            <div class="option">History</div>
+            <div class="option">Pinned Chat</div>
+        </div>
+        <div class="right">
+            <button class="settings-button">Settings</button>
+            <div class="display-screen"></div>
+            <textarea class="text-area" placeholder="Type your message here..."></textarea>
         </div>
     </div>
     <script src="script2.js"></script>

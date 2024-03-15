@@ -29,3 +29,4 @@ document.addEventListener('DOMContentLoaded', function () {
 function slideToNewPage() {
     window.location.href = "newpage.html";
 }
+
