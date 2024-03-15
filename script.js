@@ -29,4 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
 function slideToNewPage() {
     window.location.href = "newpage.html";
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const checkbox = document.getElementById('checkbox');
+
+  checkbox.addEventListener('change', function() {
+      if (checkbox.checked) {
+          document.body.classList.add('dark-mode');
+      } else {
+          document.body.classList.remove('dark-mode');
+      }
+  });
+});
+
 

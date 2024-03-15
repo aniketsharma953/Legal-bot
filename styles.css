@@ -1,27 +1,106 @@
+:root .dark-mode {
+  --bg-main:#18122B;
+  --bg-primary:#ECF2FF;
+  --bg-secondary: #FFFFFF;
+}
+body .dark-mode {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-main);
+    color: var(--bg-primary);
+}
+nav .dark-mode{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-main);
+}
+nav a .dark-mode {
+  color: var(--bg-primary);
+  text-decoration: none;
+  margin-right: 20px;
+}
+#head1 .dark-mode{
+  font-size: 60px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: var(--bg-primary);
+}
+#Consumers .dark-mode {
+  padding: 20px;
+  background-color: var(--bg-main);
+  margin-bottom: 20px;
+}
+#lawyer .dark-mode{
+  padding: 20px;
+  background-color: var(--bg-main);
+  margin-bottom: 20px;
+}
+#line .dark-mode{
+  width: 1px;
+  height: 100px;
+  background-color: var(--bg-primary);
+  margin-bottom: 20px;
+}
+#clp .dark-mode{
+  color:var(--bg-secondary);
+}
+#legpara .dark-mode{
+  color:var(--bg-secondary);
+  font-size:20px;
+}
+#card1 .dark-mode{
+  height: 400px;
+  width:750px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  background-color: var(--bg-main);
+}
+#card2 .dark-mode{
+  height: 400px;
+  width:330px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  box-shadow: 10px 10px 5px grey;
+  background-color: var(--bg-main);
+}
+#is .dark-mode{
+  font-size: 25px;
+  color: var(--bg-primary);
+}
+:root {
+  --bg-main:#FFFFFF;
+  --bg-primary:#18122B;
+  --bg-secondary: #858385;
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #EFEFEF;
+    background-color: var(--bg-main);
+    color: var(--bg-primary);
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #EFEFEF;
+    background-color:var(--bg-main);
 }
 
 .nav-links {
     margin-right: 20%;
 }
 
-nav a {
-    color: rgba(74, 68, 68, 0.737);
-    text-decoration: none;
-    margin-right: 20px;
+nav a  {
+  color: var(--bg-primary);
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 nav a:hover {
@@ -48,6 +127,7 @@ nav a:hover {
 #head1 {
     font-size: 60px;
     font-family:Arial, Helvetica, sans-serif;
+    color: var(--bg-primary);
 }
 .theme-switch {
     --toggle-size: 13px;
@@ -298,8 +378,7 @@ nav a:hover {
 
 #Consumers {
     padding: 20px;
-    background-color: #EFEFEF;
-    border: 1px solid #EFEFEF;
+    background-color: var(--bg-main);
     margin-bottom: 20px;
 }
 #consum {
@@ -309,21 +388,20 @@ nav a:hover {
   color:#AD2FFB;
 }
 #lawyer {
-    padding: 20px;
-    background-color: #EFEFEF;
-    border: 1px solid #EFEFEF;
-    margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--bg-main);
+  margin-bottom: 20px;
 }
 #lawer {
   color:#3B4DFA;
 }
 #clp {
-  color:#858385;
+  color:var(--bg-secondary);
 }
 #line {
     width: 1px;
     height: 100px;
-    background-color: #000000;
+    background-color: var(--bg-primary);
     margin-bottom: 20px;
 }
 .cardings {
@@ -332,28 +410,31 @@ nav a:hover {
 #cards {
      display: flex;
      justify-content: center;
-     gap: 2rem; 
+     gap: 2rem;
+     background-color: var(--bg-main); 
 }
 #card {
     display: flex;
     justify-content: center;
     gap: 2rem; 
     margin-top:30px;
+    background-color: var(--bg-main); 
 }
 #leg1 {
     font-size: 50px;
 }
 #legpara {
-    color:#858385;
+    color:var(--bg-secondary);
     font-size:20px;
 }
 #card1 {
     height: 400px;
     width:750px;
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color:  var(--bg-secondary);
     margin-top: 10px;
     box-shadow: 10px 10px 5px grey;
+    background-color: var(--bg-main);
 }
 #im {
     height: 250px;
@@ -362,7 +443,7 @@ nav a:hover {
     margin-top: 30px;
 }
 #cardp {
-  color:#858385;
+  color: var(--bg-secondary);
   text-align: left;
   padding-left:45px;
 }
@@ -373,15 +454,17 @@ nav a:hover {
     background-color: #FFFFFF;
     margin-top: 10px;
     box-shadow: 10px 10px 5px grey;
+    background-color: var(--bg-main);
 }
 #is1 {
   margin-top:15px;
 }
 #is {
   font-size: 25px;
+  color: var(--bg-primary);
 }
 #ispara {
-  color:#858385;
+  color:var(--bg-secondary);
   font-size: 16px;
 }
 #is2 {
@@ -417,9 +500,10 @@ nav a:hover {
     height: 400px;
     width:250px;
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
+    border: 1px solid #d6cece;
 }
 #goal:hover {
     transform: scale(1.1);
@@ -428,6 +512,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 #for1 {
     display: flex;
@@ -438,9 +523,10 @@ nav a:hover {
     height: 300px;
     width:250px;
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
+    border: 1px solid #d6cece;
 }
 #im3 {
     margin-top: 20px;
@@ -466,7 +552,7 @@ nav a:hover {
   
   .counter {
     text-align: center;
-    color: #333;
+    color: var(--bg-secondary);
   }
   
   .count {
@@ -500,6 +586,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     margin-top:180px;
+    background-color: var(--bg-main);
   }
   .car-content {
     font-size: 1.2em;
@@ -511,14 +598,15 @@ nav a:hover {
   }
   #carhe2 {
     font-size:60px;
+    color: var(--bg-primary);
   }
   #carbu {
     font-size:60px;
   }
 
 footer {
-    background-color: #EFEFEF;
-    color: #000000;
+    background-color: var(--bg-main);
+    color:var(--bg-primary);
     padding: 20px 0;
     margin-top: 250px;;
   }
@@ -537,13 +625,14 @@ footer {
   }
   
   a {
-    color: #000000;
+    color:var(--bg-primary);
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
   }
+  
 @media only screen and (max-width: 600px){
     nav {
         display:flex;
