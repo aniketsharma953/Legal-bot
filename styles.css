@@ -1,5 +1,5 @@
 :root .dark-mode {
-  --bg-main:#18122B;
+  --bg-main:#000000;
   --bg-primary:#ECF2FF;
   --bg-secondary: #FFFFFF;
 }
@@ -433,7 +433,7 @@ nav a:hover {
     border-radius: 10px;
     background-color:  var(--bg-secondary);
     margin-top: 10px;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-main);
 }
 #im {
@@ -453,7 +453,7 @@ nav a:hover {
     border-radius: 10px;
     background-color: #FFFFFF;
     margin-top: 10px;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-main);
 }
 #is1 {
@@ -503,7 +503,7 @@ nav a:hover {
     background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #d6cece;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #goal:hover {
     transform: scale(1.1);
@@ -526,7 +526,7 @@ nav a:hover {
     background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #d6cece;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #im3 {
     margin-top: 20px;
