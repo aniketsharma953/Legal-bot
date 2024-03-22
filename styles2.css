@@ -117,3 +117,18 @@ body, html {
     margin:10px;
     background-color:#5D41DE;
   }
+  /* CSS styles for user input message */
+.user-message {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+}
+
+/* CSS styles for bot output message */
+.bot-message {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
