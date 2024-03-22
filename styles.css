@@ -2,6 +2,8 @@
   --bg-main:#000000;
   --bg-primary:#ECF2FF;
   --bg-secondary: #FFFFFF;
+  --bg-tertiary:rgba(78, 77, 77, 0.489); 
+  
 }
 body .dark-mode {
     font-family: 'Arial', sans-serif;
@@ -58,6 +60,7 @@ nav a .dark-mode {
   background-color: #FFFFFF;
   margin-top: 10px;
   background-color: var(--bg-main);
+  box-shadow: 10px 10px 5px var(--bg-tertiary);
 }
 #card2 .dark-mode{
   height: 400px;
@@ -65,17 +68,42 @@ nav a .dark-mode {
   border-radius: 10px;
   background-color: #FFFFFF;
   margin-top: 10px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px var(--bg-tertiary);
   background-color: var(--bg-main);
 }
 #is .dark-mode{
   font-size: 25px;
   color: var(--bg-primary);
 }
+#goal .dark-mode{
+  height: 400px;
+  width:250px;
+  border-radius: 10px;
+  background-color: var(--bg-main);
+  margin-top: 50px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 10px 10px 5px var(--bg-tertiary);
+}
+#goal1 .dark-mode {
+  height: 300px;
+  width:250px;
+  border-radius: 10px;
+  background-color: var(--bg-main);
+  margin-top: 50px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 10px 10px 5px var(--bg-tertiary);
+}
+#line2 .dark-mode{
+  width: 1.9px;
+  height: 170px;
+  background-color: var(--bg-primary);
+  margin-bottom: 20px;
+}
 :root {
   --bg-main:#FFFFFF;
   --bg-primary:#18122B;
   --bg-secondary: #858385;
+  --bg-tertiary:rgba(225, 222, 222, 0.619);
 }
 body {
     font-family: 'Arial', sans-serif;
@@ -89,7 +117,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     background-color:var(--bg-main);
 }
 
@@ -130,7 +157,7 @@ nav a:hover {
     color: var(--bg-primary);
 }
 .theme-switch {
-    --toggle-size: 13px;
+    --toggle-size: 9px;
     --container-width: 5.625em;
     --container-height: 2.5em;
     --container-radius: 6.25em;
@@ -433,8 +460,8 @@ nav a:hover {
     border-radius: 10px;
     background-color:  var(--bg-secondary);
     margin-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-main);
+    box-shadow: 10px 10px 5px var(--bg-tertiary);
 }
 #im {
     height: 250px;
@@ -453,7 +480,7 @@ nav a:hover {
     border-radius: 10px;
     background-color: #FFFFFF;
     margin-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 5px var(--bg-tertiary);
     background-color: var(--bg-main);
 }
 #is1 {
@@ -503,7 +530,7 @@ nav a:hover {
     background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 5px var(--bg-tertiary);
 }
 #goal:hover {
     transform: scale(1.1);
@@ -526,7 +553,7 @@ nav a:hover {
     background-color: var(--bg-main);
     margin-top: 50px;
     transition: transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 5px var(--bg-tertiary);
 }
 #im3 {
     margin-top: 20px;
@@ -562,7 +589,7 @@ nav a:hover {
   #line2 {
     width: 1.9px;
     height: 170px;
-    background-color: #000000;
+    background-color: var(--bg-primary);
     margin-bottom: 20px;
 }
 #countpara {
@@ -578,7 +605,7 @@ nav a:hover {
     height: 400px;
     background-color: #FFFFFF;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 5px var(--bg-tertiary);
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -591,6 +618,7 @@ nav a:hover {
   .car-content {
     font-size: 1.2em;
     color: #333;
+    
   }
   #carhe {
     font-size:50px;

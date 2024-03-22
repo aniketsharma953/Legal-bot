@@ -11,6 +11,34 @@ body, html {
     border: 1px solid #ccc;
     overflow-y: auto;
 }
+.navigation-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border-radius: 50px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; 
+  height: 50px; 
+  overflow: hidden;
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background-color: rgb(223, 223, 223);
+}
 .middle {
     flex: 1;
     border: 1px solid #ccc;
@@ -26,7 +54,7 @@ body, html {
     border-bottom: 1px solid #ccc;
 }
 .text-area {
-    width: calc(100% - 20px);
+    width:80%;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -77,4 +105,15 @@ body, html {
     100% {
       transform: rotate(360deg);
     }
+  }
+  .ib {
+    display:flex;
+    justify-content: center;
+    gap:10px;
+  }
+  #send {
+    height:30px;
+    width:50px;
+    margin:10px;
+    background-color:#5D41DE;
   }

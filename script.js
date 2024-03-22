@@ -35,8 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
   checkbox.addEventListener('change', function() {
       if (checkbox.checked) {
           document.body.classList.add('dark-mode');
+          // document.getElementById('card1').style.boxShadow = '10px 10px 5px white';
+          // document.getElementById('card2').style.boxShadow = '10px 10px 5px white';
       } else {
           document.body.classList.remove('dark-mode');
+          // document.getElementById('card1').style.boxShadow = '10px 10px 5px grey';
+          // document.getElementById('card2').style.boxShadow = '10px 10px 5px grey';
       }
   });
 });
