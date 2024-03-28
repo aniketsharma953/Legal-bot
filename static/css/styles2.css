@@ -1,0 +1,134 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+.container {
+  display: flex;
+  height: 100%;
+}
+.left {
+  flex: 0.2;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+.navigation-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border-radius: 50px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background-color: rgb(223, 223, 223);
+}
+.middle {
+  flex: 1;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+.right {
+  flex: 3;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+.option {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.text-area {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.display-screen {
+  height: 600px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 36px;
+  width: 120px;
+  border: none;
+  background: #5e41de33;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.lable {
+  line-height: 20px;
+  font-size: 17px;
+  color: #5d41de;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: #5e41de4d;
+}
+
+.button:hover .svg-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ib {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#send {
+  height: 30px;
+  width: 50px;
+  margin: 10px;
+  background-color: #5d41de;
+}
+
+.user-message {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+}
+
+.bot-message {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
