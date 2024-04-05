@@ -1,7 +1,12 @@
 import os
 from flask import Flask, render_template, request, jsonify, send_from_directory
-from openai import OpenAI
 from dotenv import load_dotenv
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import elastic_vector_search, pinecone, weaviate, FAISS
+from langchain.chains.question_answering import load_qa_chain
+from langchain_openai import OpenAI
+import PyPDF2
 
 app = Flask(__name__)
 
@@ -10,46 +15,47 @@ load_dotenv()
 
 # Initialize OpenAI client
 API_KEY = os.getenv('API_KEY')
-client = OpenAI(api_key=API_KEY)
+os.environ['OPENAI_API_KEY'] = API_KEY
 
-history = []
-system_msg = {
-    "role": "system",
-    "content": """
-You are developing a chatbot to assist users in determining which law applies to their specific condition or situation in India. Your chatbot should be able to provide relevant information about Indian laws based on the user's input.
 
-Here's how your chatbot should function:
-1. When a user presents a scenario or condition, the chatbot should analyze the provided information to identify key elements that could determine applicable laws.
-2. The chatbot should then search through a database or knowledge base of Indian laws and regulations to find the most relevant law(s) that apply to the given condition.
-3. After identifying the relevant law(s), the chatbot should provide a concise explanation or summary of the law(s) and how they relate to the user's condition.
-4. If necessary, the chatbot should also offer guidance on further steps or actions that the user may need to take in accordance with the identified law(s).
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-To achieve this functionality, your chatbot's system role should focus on:
-- Understanding natural language input from users, including scenarios, conditions, or questions related to Indian laws.
-- Extracting key information and context from user input to facilitate law identification.
-- Searching and retrieving relevant information from a database or knowledge base of Indian laws and regulations.
-- Formulating clear and informative responses that explain the identified law(s) in a user-friendly manner.
-- Providing additional guidance or resources to assist users in understanding and complying with applicable laws.
+# Construct the path to the PDF file
+pdf_path = os.path.join(script_dir, "data/Law.pdf")
 
-Use this content prompt to guide the development of your chatbot's system role, ensuring that it effectively addresses the user's needs and provides accurate and helpful information regarding Indian laws.
-"""
-}
+# Load data from PDF
+
+
+def load_data_from_pdf(pdf_path):
+    with open(pdf_path, 'rb') as file:
+        reader = PyPDF2.PdfReader(file)
+        text = ''
+        for page_num in range(len(reader.pages)):
+            text += reader.pages[page_num].extract_text()
+        return text
+
+
+data_text = load_data_from_pdf(pdf_path)
+
+text_splitter = CharacterTextSplitter(
+    separator=u'\n',
+    chunk_size=1000,
+    chunk_overlap=200,
+    length_function=len
+)
+
+texts = text_splitter.split_text(data_text)
+
+embeddings = OpenAIEmbeddings()
+docsseach = FAISS.from_texts(texts, embeddings)
+
+chain = load_qa_chain(OpenAI(), chain_type="stuff")
 
 
 def ask(question):
 
-    question_msg = {
-        "role": "user",
-        "content": question,
-    }
-    history.append(question_msg)
-    response = client.chat.completions.create(
-        messages=history,
-        model="gpt-3.5-turbo",
-    )
-    answer_msg = response.choices[0].message
-    history.append(answer_msg)
-    return answer_msg.content
+    docs = docsseach.similarity_search(question)
+    print(chain.run(input_document=docs, question=question))
 
 
 # Route to render the HTML template
