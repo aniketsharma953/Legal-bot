@@ -3,9 +3,10 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from dotenv import load_dotenv
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import elastic_vector_search, pinecone, weaviate, FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 import PyPDF2
 
 app = Flask(__name__)
@@ -14,9 +15,12 @@ app = Flask(__name__)
 load_dotenv()
 
 # Initialize OpenAI client
-API_KEY = os.getenv('API_KEY')
-os.environ['OPENAI_API_KEY'] = API_KEY
+os.environ['OPENAI_API_KEY'] = os.getenv('API_KEY')
 
+chats = ChatOpenAI(
+    openai_api_key=os.environ['OPENAI_API_KEY'],
+    model='gpt-3.5-turbo'
+)
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -51,12 +55,30 @@ docsseach = FAISS.from_texts(texts, embeddings)
 
 chain = load_qa_chain(OpenAI(), chain_type="stuff")
 
+# Dictionary to store previous questions and answers
+memory = {'question': None, 'answer': None}
+
 
 def ask(question):
-
+    # Adjusted question
     docs = docsseach.similarity_search(question)
-    print(chain.run(input_document=docs, question=question))
+    if not docs:
+        if question.lower() == 'explain the above question' and memory['question'] and memory['answer']:
+            return memory['answer']
+        # If the question is not found in the document, ask ChatGPT
+        answer = chats.ask(question)
+        memory['question'] = question
+        memory['answer'] = answer
+        return answer
 
+    # Ensure 'input_documents' is passed instead of 'input_document'
+    answer = chain.run(input_documents=docs, question=question)
+
+    # Save the answer to memory
+    memory['question'] = question
+    memory['answer'] = answer
+
+    return answer
 
 # Route to render the HTML template
 
