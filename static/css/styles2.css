@@ -2,16 +2,38 @@ body,
 html {
   height: 100%;
   margin: 0;
+  font-family: Red Hat Display, sans-serif;
 }
 .container {
   display: flex;
   height: 100%;
 }
 .left {
-  flex: 0.2;
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Distribute children with equal space between them */
+  height: 100vh;
   border: 1px solid #ccc;
   overflow-y: auto;
+  width: 5rem;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
 }
+
+#options {
+  align-self: center; /* Center the second child div vertically */
+}
+
+#options > .option {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px; /* Add space between child divs */
+}
+
+#options > div {
+  margin-top: 20px;
+  border: none;
+}
+
 .navigation-card {
   width: fit-content;
   height: fit-content;
@@ -43,7 +65,12 @@ html {
 .middle {
   flex: 1;
   border: 1px solid #ccc;
+  width: 100%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border: white;
+  box-shadow: 10px 0 25px -3px rgba(0, 0, 0, 0.1);
 }
 .right {
   flex: 3;
@@ -132,8 +159,9 @@ html {
   margin: 10px;
   padding: 10px;
   max-width: 500px;
-  background-color: #05bcff;
+  background-color: #000000;
   border-radius: 5px;
+  color: white;
 }
 
 .bot-message {
@@ -141,9 +169,10 @@ html {
   float: left;
   padding: 10px;
   max-width: 500px;
-  background-color: #00ff55;
+  background-color: #fefefe;
   border-radius: 5px;
   margin: 10px;
+  color: black;
 }
 
 .hidden {
@@ -194,4 +223,117 @@ html {
   100% {
     transform: translate(0.1px);
   }
+}
+
+.option-img {
+  transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.option-img:hover {
+  transform: scale(1.1); /* Increase scale for active option */
+}
+
+.home {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  text-align: center;
+  align-self: center;
+}
+
+.menu {
+  width: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  align-self: center;
+}
+
+.menu > div {
+  margin: 10px;
+  text-align: center;
+}
+
+.option {
+  position: relative; /* Position the container relatively */
+}
+
+.option::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -14.2px; /* Adjust as needed */
+  width: 3px;
+  height: 93%;
+  background-color: black;
+  display: none; /* Initially hide the line */
+}
+
+.option.active::after {
+  display: block; /* Show the line when option is active */
+}
+
+#pro {
+  height: 120px;
+  width: auto;
+  border: white;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-pro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 36px;
+  width: 200px;
+  border: none;
+  background: #ffc400;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
+  border: 1px solid #ffcc23;
+  box-shadow: 10px 0 25px -3px rgba(0, 0, 0, 0.2);
+}
+
+#tabs {
+  height: 100vh;
+}
+
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat {
+  margin: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lable_chat {
+  width: 70%;
+  font-size: 21px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+#history {
+  border: 1px solid #fae191;
+  background-color: rgb(253, 250, 202);
 }

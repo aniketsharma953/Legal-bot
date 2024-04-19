@@ -55,10 +55,36 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  var chatOption = document.getElementById("chat");
-  var middleDiv = document.getElementById("middle");
+  const middleDiv = document.getElementById("middle");
+  const options = document.querySelectorAll(".option"); // Corrected selector
+  const optionsImages = document.querySelectorAll(".option-img"); // Corrected selector
+  const alterImages = [
+    "https://img.icons8.com/ios-filled/50/speech-bubble-with-dots.png",
+    "https://img.icons8.com/ios-filled/50/google-docs.png",
+    "https://img.icons8.com/ios-filled/50/cloud.png",
+    "https://img.icons8.com/fluency-systems-filled/48/user.png",
+  ];
 
-  chatOption.addEventListener("click", function () {
-    middleDiv.classList.toggle("hidden");
+  const imageSrc = Array.from(optionsImages).map((element) => {
+    // Corrected method
+    return element.src;
+  });
+
+  optionsImages[0].src = alterImages[0];
+  options[0].classList.add("active");
+
+  options.forEach((element, index) => {
+    element.addEventListener("click", function () {
+      optionsImages.forEach((img, i) => {
+        img.src = imageSrc[i];
+      });
+
+      options.forEach((option) => {
+        option.classList.remove("active");
+      });
+
+      optionsImages[index].src = alterImages[index];
+      element.classList.add("active");
+    });
   });
 });

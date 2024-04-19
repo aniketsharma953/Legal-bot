@@ -13,18 +13,104 @@
   <body>
     <div class="container">
       <div class="left">
-        <div class="option"><a href="/">Home</a></div>
-        <div class="option" id="chat">Chat</div>
-        <!-- Added id "chat" to the Chat option -->
-        <div class="option">Copy</div>
-        <div class="option">Cloud</div>
-        <div class="option">Profile</div>
+        <div class="home">
+          <a href="/">
+            <img
+              width="40"
+              height="40"
+              src="{{ url_for('static',filename='img/png/logo-no-background.png') }}"
+              alt=""
+            />
+          </a>
+        </div>
+        <div id="options">
+          <div class="option" id="chat">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/speech-bubble-with-dots--v1.png"
+              alt="chat-message--v1"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/google-docs.png"
+              alt="google-docs"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/cloud--v1.png"
+              alt="cloud--v1"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency-systems-regular/48/user--v1.png"
+              alt="user"
+              class="option-img"
+            />
+          </div>
+        </div>
+        <div class="menu">
+          <div>
+            <img
+              width="17"
+              height="17"
+              src="https://img.icons8.com/ios/50/info--v1.png"
+              alt="info--v1"
+            />
+          </div>
+          <div>
+            <img
+              width="17"
+              height="17"
+              src="https://img.icons8.com/fluency-systems-regular/48/appointment-reminders--v1.png"
+              alt="appointment-reminders--v1"
+            />
+          </div>
+          <div>
+            <img
+              width="19"
+              height="19"
+              src="https://img.icons8.com/external-glyph-silhouettes-icons-papa-vector/78/external-Light-Mode-interface-glyph-silhouettes-icons-papa-vector.png"
+              alt="external-Light-Mode-interface-glyph-silhouettes-icons-papa-vector"
+            />
+          </div>
+        </div>
       </div>
       <div class="middle" id="middle">
         <!-- Added id "middle" to the middle div -->
-        <div class="option">New Chat</div>
-        <div class="option">History</div>
-        <div class="option">Pinned Chat</div>
+        <div class="option" id="pro">
+          <div class="active-pro">Activate Pro</div>
+        </div>
+        <div class="option" id="tabs">
+          <div class="chat">
+            <div class="lable_chat">
+              <lable class="name"> Chat </lable>
+            </div>
+            <div class="chat-button">
+              <div class="active-pro">New Chat</div>
+            </div>
+          </div>
+          <div class="chat">
+            <div class="lable_chat">
+              <lable class="name"> History </lable>
+            </div>
+            <div class="chat-button">
+              <div class="active-pro" id="history"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="right">
         <div class="display-screen" id="display"></div>
@@ -60,6 +146,7 @@
         </button>
       </div>
     </div>
+
     <script src="{{url_for('static', filename= 'js/script2.js')}}"></script>
   </body>
 </html>
