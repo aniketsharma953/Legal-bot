@@ -13,18 +13,118 @@
   <body>
     <div class="container">
       <div class="left">
-        <div class="option"><a href="/">Home</a></div>
-        <div class="option" id="chat">Chat</div>
-        <!-- Added id "chat" to the Chat option -->
-        <div class="option">Copy</div>
-        <div class="option">Cloud</div>
-        <div class="option">Profile</div>
+        <div class="home">
+          <a href="/">
+            <img
+              width="40"
+              height="40"
+              src="{{ url_for('static',filename='img/png/logo-no-background.png') }}"
+              alt=""
+            />
+          </a>
+        </div>
+        <div id="options">
+          <div class="option" id="chat">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/speech-bubble-with-dots--v1.png"
+              alt="chat-message--v1"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/google-docs.png"
+              alt="google-docs"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/cloud--v1.png"
+              alt="cloud--v1"
+              class="option-img"
+            />
+          </div>
+          <div class="option">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency-systems-regular/48/user--v1.png"
+              alt="user"
+              class="option-img"
+            />
+          </div>
+        </div>
+        <div class="menu">
+          <div>
+            <img
+              width="17"
+              height="17"
+              src="https://img.icons8.com/ios/50/info--v1.png"
+              alt="info--v1"
+            />
+          </div>
+          <div>
+            <img
+              width="17"
+              height="17"
+              src="https://img.icons8.com/fluency-systems-regular/48/appointment-reminders--v1.png"
+              alt="appointment-reminders--v1"
+            />
+          </div>
+          <div>
+            <img
+              width="19"
+              height="19"
+              src="https://img.icons8.com/external-glyph-silhouettes-icons-papa-vector/78/external-Light-Mode-interface-glyph-silhouettes-icons-papa-vector.png"
+              alt="external-Light-Mode-interface-glyph-silhouettes-icons-papa-vector"
+            />
+          </div>
+        </div>
       </div>
       <div class="middle" id="middle">
-        <!-- Added id "middle" to the middle div -->
-        <div class="option">New Chat</div>
-        <div class="option">History</div>
-        <div class="option">Pinned Chat</div>
+        <div class="box" id="pro">
+          <a href="#m1-o" class="active-pro" id="m1-c">Active Pro</a>
+
+          <div
+            class="modal-container"
+            id="m1-o"
+            style="--m-background: hsla(0, 0%, 0%, 0.4)"
+          >
+            <div class="modal">
+              <div class="card">
+                <div class="header">AI LAWYER +</div>
+                <div class="info">
+                  <center>
+                    <p class="title">Premium Package Highlights</p>
+                  </center>
+                  <ul>
+                    <li>24/7 Legal Assistance</li>
+                    <li>Personalized Solutions</li>
+                    <li>Advanced Case Analysis</li>
+                    <li>Expert Consultations</li>
+                    <li>Priority Support</li>
+                    <li>Top-Notch Security</li>
+                    <li>Streamlined Processes</li>
+                    <li>Confidence in Decision-Making</li>
+                    <li>Experience the Future</li>
+                  </ul>
+                </div>
+                <div class="footer">
+                  <a href="#m1-c"> <p class="tag">CLOSE</p></a>
+                  <button type="button" class="action">Buy Now $99</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tabs"></div>
       </div>
       <div class="right">
         <div class="display-screen" id="display"></div>
@@ -34,32 +134,11 @@
             id="inputMessage"
             placeholder="Type your message here..."
           />
-          <button id="send">Send</button>
+          <div class="send" id="send">Send</div>
         </div>
       </div>
-      <div>
-        <button class="button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            viewBox="0 0 20 20"
-            height="20"
-            fill="none"
-            class="svg-icon"
-          >
-            <g stroke-width="1.5" stroke-linecap="round" stroke="#5d41de">
-              <circle r="2.5" cy="10" cx="10"></circle>
-              <path
-                fill-rule="evenodd"
-                d="m8.39079 2.80235c.53842-1.51424 2.67991-1.51424 3.21831-.00001.3392.95358 1.4284 1.40477 2.3425.97027 1.4514-.68995 2.9657.82427 2.2758 2.27575-.4345.91407.0166 2.00334.9702 2.34248 1.5143.53842 1.5143 2.67996 0 3.21836-.9536.3391-1.4047 1.4284-.9702 2.3425.6899 1.4514-.8244 2.9656-2.2758 2.2757-.9141-.4345-2.0033.0167-2.3425.9703-.5384 1.5142-2.67989 1.5142-3.21831 0-.33914-.9536-1.4284-1.4048-2.34247-.9703-1.45148.6899-2.96571-.8243-2.27575-2.2757.43449-.9141-.01669-2.0034-.97028-2.3425-1.51422-.5384-1.51422-2.67994.00001-3.21836.95358-.33914 1.40476-1.42841.97027-2.34248-.68996-1.45148.82427-2.9657 2.27575-2.27575.91407.4345 2.00333-.01669 2.34247-.97026z"
-                clip-rule="evenodd"
-              ></path>
-            </g>
-          </svg>
-          <span class="lable">Settings</span>
-        </button>
-      </div>
     </div>
+
     <script src="{{url_for('static', filename= 'js/script2.js')}}"></script>
   </body>
 </html>
