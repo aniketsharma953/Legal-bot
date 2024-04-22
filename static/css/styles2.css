@@ -3,6 +3,7 @@ html {
   height: 100%;
   margin: 0;
   font-family: Red Hat Display, sans-serif;
+  background-color: #f0eee7;
 }
 .container {
   display: flex;
@@ -83,15 +84,17 @@ html {
 }
 .text-area {
   width: 80%;
-  margin: 10px;
+  margin: 8px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   resize: none;
+  font-size: 15px;
+  outline: none;
 }
 .display-screen {
   height: 650px;
   margin: 10px;
-  border: 1px solid #ccc;
+  border: none;
   overflow-y: auto;
 }
 
@@ -136,10 +139,19 @@ html {
   }
 }
 .ib {
+  position: fixed;
+  z-index: 2;
+  right: 80px;
+  bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 900px;
+  background-color: white;
+  box-shadow: 10px 0 10px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  border: none;
 }
 #send {
   height: 35.5px;
@@ -157,22 +169,26 @@ html {
   clear: both;
   float: right;
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   max-width: 500px;
   background-color: #000000;
   border-radius: 5px;
   color: white;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 25px 25px 0px 25px;
 }
 
 .bot-message {
   clear: both;
   float: left;
-  padding: 10px;
+  padding: 15px;
   max-width: 500px;
   background-color: #fefefe;
   border-radius: 5px;
   margin: 10px;
   color: black;
+  box-shadow: 10px 0 50px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 25px 25px 25px 0px;
 }
 
 .hidden {
@@ -288,6 +304,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .active-pro {
@@ -310,12 +327,14 @@ html {
 
 #tabs {
   height: 100vh;
+  padding: 10px;
 }
 
 .chat-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 75%;
 }
 
 .chat {
@@ -324,6 +343,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .lable_chat {
@@ -335,5 +355,243 @@ html {
 
 #history {
   border: 1px solid #fae191;
-  background-color: rgb(253, 250, 202);
+  background-color: rgb(249, 247, 227);
+  height: auto;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+
+.question-div {
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px;
+  border-bottom: 0.3px solid rgba(254, 204, 0, 0.623);
+}
+
+.question-div > img {
+  height: 20px;
+  width: 20px;
+}
+
+a,
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+/* box */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 4rem 2rem;
+}
+
+.box:not(:first-child) {
+  height: 45rem;
+}
+
+.box__title::first-letter {
+  color: var(--primary);
+}
+
+.box__p,
+.box__info,
+.box__note {
+  font-size: 1.6rem;
+}
+
+.box__info {
+  margin-top: 6rem;
+}
+
+.box__note {
+  line-height: 2;
+}
+
+/* modal */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  /* --m-background is set as inline style */
+  background: var(--m-background);
+}
+
+/* using :target */
+/*
+when users will click/enter button(link) browser will add a #id in a url and when that happens we'll show our users the modal that contains that id.
+*/
+.modal-container:target {
+  display: flex;
+}
+
+.modal {
+  width: 60rem;
+  padding: 4rem 2rem;
+  border-radius: 0.8rem;
+
+  color: var(--light);
+  background: var(--background);
+  box-shadow: var(--m-shadow, 0.4rem 0.4rem 10.2rem 0.2rem) var(--shadow-1);
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.75rem;
+  background-color: white;
+  width: 400px;
+  height: 570px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.header {
+  position: relative;
+  background-clip: border-box;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(29deg, #f2cc00, #f2a200);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 43s ease infinite;
+  -moz-animation: AnimationName 43s ease infinite;
+  animation: AnimationName 43s ease infinite;
+  box-shadow: 0 10px 15px -3px rgba(208, 243, 33, 0.4),
+    0 4px 6px -4px rgba(243, 236, 33, 0.4);
+  height: 14rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.info {
+  border: none;
+  padding: 1rem;
+}
+
+li {
+  margin: 5px;
+}
+
+.title {
+  color: rgb(38 50 56);
+  letter-spacing: 0;
+  line-height: 1.375;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  padding: 0.75rem;
+  border: 1px solid rgb(236 239 241);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 140, 255, 0.082);
+}
+
+.tag {
+  font-weight: 300;
+  font-size: 0.75rem;
+  display: block;
+}
+
+.action {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px -1px rgba(243, 222, 33, 0.4),
+    0 2px 4px -2px rgba(229, 243, 33, 0.4);
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(243, 177, 33);
+  border-radius: 0.5rem;
 }
