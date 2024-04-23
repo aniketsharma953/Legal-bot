@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       <div class="lable_chat">
         <lable class="name"> Chat </lable>
       </div>
-      <div class="chat-button" onclick="newChat()">
-        <div class="active-pro">New Chat</div>
+      <div class="chat-button" >
+        <div class="active-pro" id="new-chat">New Chat</div>
       </div>
     </div>
     <div class="chat">
@@ -40,20 +40,46 @@ document.addEventListener("DOMContentLoaded", async function () {
     </div>`,
     `<div class="chat">
       <div class="lable_chat">
-        <lable class="name"> cloud Chat </lable>
+        <lable class="name"> Document used </lable>
       </div>
-      <div class="chat-button">
-        <div class="active-pro">New Chat</div>
+      <div class="document-section">
+        <div class="active-pro" id="documents">
+        <div id="document-text"> LAW BOOK </div>
+        <div id="download-button"><img width="20" height="20" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png" alt="download--v1"/></div>
+        </div>
+        <div class="active-pro" id="documents">
+        <div id="document-text"> LAW BOOK </div>
+        <div id="download-button"><img width="20" height="20" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png" alt="download--v1"/></div>
+        </div>
+        <div class="active-pro" id="documents">
+        <div id="document-text"> LAW BOOK </div>
+        <div id="download-button"><img width="20" height="20" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png" alt="download--v1"/></div>
+        </div>
+        <div class="active-pro" id="documents">
+        <div id="document-text"> LAW BOOK </div>
+        <div id="download-button">
+  <a href="{{ url_for('static',filename='data/Law.pdf') }}" download="Law document.pdf">
+    <img width="20" height="20" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png" alt="download--v1"/>
+  </a>
+</div>
+
+        </div>
       </div>
     </div>`,
-    `<div class="chat">
-      <div class="lable_chat">
-        <lable class="name"> paper Chat </lable>
+    `<div id="locked">
+    <img width="26" height="26" src="https://img.icons8.com/metro/26/unlock.png" alt="unlock"/>
+    <p>Unlock with pro</p>`,
+    `
+      <div id='register'>
+      <input type="text" placeholder="Name" name="username"/><br/>
+      <input type="password" placeholder="Password" name="passwd"/><br/>
+      <div class='active-pro' id='submit'>Sign Up</div>
+      <p>-----------------or-----------------</p>
+      <div class='active-pro' id='submit'>Login</div>
+      <p>Frogot passward? click here to reset </p>
       </div>
-      <div class="chat-button">
-        <div class="active-pro">New Chat</div>
-      </div>
-    </div>`,
+      
+    `,
   ];
 
   async function printMessage() {
@@ -101,6 +127,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
+  function newChat() {
+    // Reset display
+    display.innerHTML = "";
+
+    // Reset history tab
+    const historyTab = document.getElementById("history");
+    historyTab.innerHTML = "No chat yet";
+    flag = true;
+  }
+
+  // Add event listener to new chat button
+  document.getElementById("new-chat").addEventListener("click", newChat);
+
   async function sendMessage(message) {
     const response = await fetch("/chat", {
       method: "POST",
@@ -126,7 +165,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   optionsImages[0].src = alterImages[0];
   options[0].classList.add("active");
-  tabs.innerHTML = middle[0];
 
   options.forEach((element, index) => {
     element.addEventListener("click", function () {

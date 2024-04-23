@@ -595,3 +595,87 @@ li {
   background-color: rgb(243, 177, 33);
   border-radius: 0.5rem;
 }
+
+#register {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+#register > p {
+  color: grey;
+}
+
+#register > input {
+  height: 40px;
+  width: 60%;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 20px;
+}
+
+#submit {
+  background-color: rgba(255, 208, 0, 0.708);
+  color: rgba(40, 40, 40, 0.763);
+  border-radius: 10px;
+}
+
+#locked {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+#locked > p {
+  text-align: center;
+}
+
+#parent-lock {
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.document-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+#documents {
+  background-color: white;
+  border: 1px solid rgba(255, 234, 0, 0.71);
+  justify-content: start;
+  padding: 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#document-text {
+  width: 80%;
+  padding-left: 15px;
+  font-size: 15px;
+}
+
+#download-button {
+  width: 40px;
+  height: 100%;
+  background-color: rgb(255, 200, 0);
+  align-self: end;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
